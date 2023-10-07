@@ -8,25 +8,54 @@ Creating tokens on a blockchain involves setting up a smart contract with parame
 
 ## Getting Started
 
-### Installing
-
-* How/where to download your program
-* Any modifications needed to be made to files/folders
-
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
+To run this program, you can use Remix, an online Solidity IDE. To get started, go to the Remix website at https://remix.ethereum.org/.
+
+Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., HelloWorld.sol). Here is an example code of my token:
 ```
-code blocks for commands
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.18;
+
+contract MyToken {
+
+    // public variables here
+string public tokenName = "AZIEL";
+string public tokenAbbrv = "AZ";
+uint public totalSupply = 0;
+
+    // mapping variable here
+mapping(address => uint) public balances;
+
+    // mint function
+function mint (address token_address, uint token_value) public{
+    totalSupply += token_value;
+    balances[token_address] += token_value;
+}
+
+    // burn function
+function burn (address token_address, uint token_value) public{
+    if (balances[token_address] >= token_value){
+        totalSupply -= token_value;
+        balances[token_address] -= token_value;
+        }
+    }
+}
+
 ```
+To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar and then click on the "Compile HelloWorld.sol" button. Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Under deployed contracts, you should see the token name, token abbreviation and current total supply of your choice.
+
+To check if the code works as it should, copy the default address
+and paste it under mint and mint an amount of your choice. Then, click on transact and check the total supply. Also copy the address to the balances.
+
+Now, try to burning tokens doing the same process. Check the total supply if it has been reduced by the amount of your choice, as well as the balances.
+
+Lastly, try to check if you cannot burn more than what you have, the total supply should not changed as well as the balance.
+
+Thank you!
 
 ## Authors
 
 Aziel Samaniego
+
 202011004@fit.edu.ph
-
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
