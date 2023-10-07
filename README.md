@@ -43,14 +43,14 @@ function burn (address token_address, uint token_value) public{
 }
 
 ```
-To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar and then click on the "Compile HelloWorld.sol" button. Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Under deployed contracts, you should see the token name, token abbreviation and current total supply of your choice.
+To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar and then click on the "Compile [file_name].sol" button. Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Under deployed contracts, you should see the token name, token abbreviation and current total supply of your choice.
 
 To check if the code works as it should, copy the default address
-and paste it under mint and mint an amount of your choice. Then, click on transact and check the total supply. Also copy the address to the balances.
+and paste it under mint and mint an amount of your choice. Then, click on transact and check the total supply. Also, copy the address to the balances.
 
-Now, try to burning tokens doing the same process. Check the total supply if it has been reduced by the amount of your choice, as well as the balances.
+Now, try to burn tokens doing the same process. Check the total supply and balances if it has been reduced by the amount of your choice.
 
-Lastly, try to check if you cannot burn more than what you have, the total supply should not changed as well as the balance.
+Lastly, try to check if you cannot burn more than what you have, the total supply and the balances should not change.
 
 Thank you!
 
